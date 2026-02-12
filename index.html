@@ -57,6 +57,10 @@
       transition: all 0.3s ease;
       background: rgba(255,255,255,0.2);
       border: 1px solid rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
     }
     .nav a:hover { 
       background: rgba(255,255,255,0.9);
@@ -121,7 +125,7 @@
       .mobile-nav { display: none; }
       .header .nav { display: none; }
       .mobile-header .nav { display: flex !important; gap: 0.5em; }
-      .mobile-header .nav a { font-size: 0.7rem; padding: 4px 8px; }
+      .mobile-header .nav a { font-size: 0.7rem; padding: 4px 8px; display: flex; align-items: center; justify-content: center; gap: 3px; }
       body { padding-top: 50px; }
       .testimonial-section { padding: 15px 0 0 0 !important; }
       .testimonial-section-mobile { padding: 30px 0 0 0 !important; }
