@@ -10,20 +10,70 @@
     body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 300; line-height: 1.6; color: #333; }
     img { max-width: 100%; height: auto; display: block; }
     
-    /* Header */
-    .header { background: #fff; padding: 12px 0; }
-    .header-container { max-width: 1170px; margin: 0 auto; padding: 0 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    .logo { width: 245px; }
-    .logo img { width: 100%; }
-    .nav { display: flex; gap: 2em; }
-    .nav a { font-size: 2rem; font-weight: 700; color: #000; text-decoration: none; text-transform: uppercase; }
-    .nav a:hover { color: #004bff; }
+    /* Header - Sticky Gold */
+    .header { 
+      background: linear-gradient(135deg, #C9A961 0%, #D4AF37 50%, #B8860B 100%); 
+      padding: 6px 0; 
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      border-bottom: 3px solid #8B6914;
+    }
+    .header-container { 
+      max-width: 1170px; 
+      margin: 0 auto; 
+      padding: 0 15px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      height: 50px;
+    }
+    .logo { 
+      width: auto; 
+      height: 40px; 
+      display: flex;
+      align-items: center;
+    }
+    .logo img { 
+      height: 40px; 
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+    }
+    .nav { display: flex; gap: 2em; align-items: center; }
+    .nav a { 
+      font-size: 0.9rem; 
+      font-weight: 600; 
+      color: #1a1a1a; 
+      text-decoration: none; 
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .nav a:hover { 
+      background: rgba(255,255,255,0.9);
+      color: #8B6914;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
     
-    .mobile-header { display: none; background: #dde7ff; padding: 12px 0; text-align: center; }
-    .mobile-header .logo { width: 163px; margin: 0 auto; }
-    .mobile-nav { display: none; background: #dde7ff; padding: 0 0 12px; text-align: center; }
+    /* Adjust body to account for sticky header */
+    body { padding-top: 62px; }
+    
+    .mobile-header { display: none; background: linear-gradient(135deg, #C9A961 0%, #D4AF37 50%, #B8860B 100%); padding: 6px 0; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; border-bottom: 3px solid #8B6914; }
+    .mobile-header .logo { width: auto; height: 40px; margin: 0 auto; }
+    body .mobile-header + nav + section { padding-top: 50px; }
+    .mobile-nav { display: none; background: linear-gradient(135deg, #C9A961 0%, #D4AF37 100%); padding: 6px 0; position: fixed; top: 52px; left: 0; right: 0; z-index: 999; border-bottom: 2px solid #8B6914; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
     .mobile-nav .nav { justify-content: center; flex-wrap: wrap; }
-    .mobile-nav .nav a { font-size: 0.92rem; }
+    .mobile-nav .nav a { font-size: 0.8rem; padding: 5px 10px; margin: 2px; background: rgba(255,255,255,0.25); }
     
     .section { padding: 3% 1%; }
     .container { max-width: 1170px; margin: 0 auto; padding: 0 15px; }
@@ -67,8 +117,11 @@
     
     @media (max-width: 770px) {
       .desktop-only { display: none !important; }
-      .mobile-header, .mobile-nav { display: block; }
+      .mobile-header { display: block !important; }
+      .mobile-nav { display: none; }
       .header .nav { display: none; }
+      .mobile-header .nav { display: flex !important; gap: 0.5em; }
+      .mobile-header .nav a { font-size: 0.7rem; padding: 4px 8px; }
       .testimonial-row { flex-direction: column; }
       .testimonial-image img { width: 100%; }
       .image-row { flex-direction: column; }
@@ -81,7 +134,7 @@
       .subheadline-m { font-size: 1rem; }
       p { font-size: 1rem; line-height: 1.4; }
       .narrow-container { max-width: 100%; }
-      .nav a { font-size: 0.92rem; }
+      body { padding-top: 50px; }
     }
     @media (min-width: 771px) { .mobile-only { display: none !important; } }
   </style>
@@ -92,7 +145,7 @@
   <header class="header desktop-only">
     <div class="header-container">
       <div class="logo">
-        <img src="images/7bce27064a730280337e71c227111c9c.png" alt="180 View of WOW Inc.">
+        <img src="images/7bce27064a730280337e71c227111c9c.png" alt="180 View of WOW">
       </div>
       <nav class="nav">
         <a href="#ROOMS">💤 Rooms</a>
@@ -104,17 +157,18 @@
 
   <!-- Mobile Header -->
   <header class="mobile-header mobile-only">
-    <div class="logo">
-      <img src="images/d9c9a071ebfb3d7d833f444ad49b2d4f.png" alt="180 View of WOW Inc.">
+    <div class="header-container">
+      <div class="logo">
+        <img src="images/7bce27064a730280337e71c227111c9c.png" alt="180 View of WOW Inc.">
+      </div>
+      <nav class="nav">
+        <a href="#ROOMS">💤 Rooms</a>
+        <a href="#REVIEWS">✏️ Reviews</a>
+        <a href="#SUNSETS">🌅 Sunsets</a>
+      </nav>
     </div>
   </header>
-  <nav class="mobile-nav mobile-only">
-    <div class="nav">
-      <a href="#ROOMS">💤 Rooms</a>
-      <a href="#REVIEWS">✏️ Reviews</a>
-      <a href="#SUNSETS">🌅 Sunsets</a>
-    </div>
-  </nav>
+  <div style="height: 62px;" class="mobile-only"></div>
 
   <!-- Testimonial Section -->
   <section class="testimonial-section section-dark">
