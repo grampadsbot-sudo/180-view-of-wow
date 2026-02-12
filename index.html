@@ -16,43 +16,44 @@
   
   <!-- Header -->
   <header class="bg-white shadow-md fixed w-full top-0 z-50">
-    <div class="container mx-auto px-6 py-4">
+    <div class="container mx-auto px-4 py-3">
       <div class="flex justify-between items-center">
-        <h1 class="text-2xl md:text-3xl font-display font-bold text-blue-900">180 View of WOW</h1>
-        <nav class="hidden md:flex space-x-6">
-          <a href="#about" class="text-gray-600 hover:text-blue-900 transition">About</a>
-          <a href="#features" class="text-gray-600 hover:text-blue-900 transition">Features</a>
-          <a href="#location" class="text-gray-600 hover:text-blue-900 transition">Location</a>
-          <a href="#contact" class="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-800 transition">Book Now</a>
+        <img src="images/logo.png" alt="180 View of WOW" class="h-12 md:h-16">
+        <nav class="hidden md:flex space-x-6 items-center">
+          <a href="#about" class="text-gray-600 hover:text-blue-900 transition text-sm">About</a>
+          <a href="#gallery" class="text-gray-600 hover:text-blue-900 transition text-sm">Gallery</a>
+          <a href="#location" class="text-gray-600 hover:text-blue-900 transition text-sm">Location</a>
+          <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm font-semibold">Book Now</a>
         </nav>
-        <button class="md:hidden text-gray-600">
+        <button class="md:hidden text-gray-600 p-2">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="pt-24 md:pt-32 pb-16 bg-gradient-to-b from-blue-50 to-white">
-    <div class="container mx-auto px-6">
+  <!-- Hero Section with Video -->
+  <section class="pt-20 md:pt-24 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4 py-8">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl md:text-6xl font-display font-bold text-blue-900 mb-6">
+        <h1 class="text-3xl md:text-5xl font-display font-bold text-blue-900 mb-4">
           Your Own Private Mini-Resort
-        </h2>
-        <p class="text-xl md:text-2xl text-gray-600 mb-8 font-display italic">
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 mb-6 font-display italic">
           Experience Hawaii from the comfort of this charming Mediterranean-style Villa
         </p>
+        
         <!-- Video -->
-        <div class="mt-8 mb-8 max-w-3xl mx-auto">
+        <div class="mb-6 rounded-xl overflow-hidden shadow-2xl">
           <script src="https://embed.voomly.com/embed/embed-build.js"></script>
           <div class="voomly-embed" data-id="vgA_aNJGQ9uS0lUOjkgXucOFhQ-JFgDpx4aMQ4wCU6bEOPTxB" data-ratio="0.562500" data-type="v" data-skin-color="#008EFF" data-shadow="" style="width: 100%; aspect-ratio: 0.5625 / 1; background: linear-gradient(45deg, rgb(142, 150, 164) 0%, rgb(201, 208, 222) 100%); border-radius: 10px;"></div>
         </div>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contact" class="bg-blue-900 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-800 transition shadow-lg">
+          <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition shadow-lg">
             Book Your Stay
           </a>
-          <a href="#about" class="bg-white text-blue-900 border-2 border-blue-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition">
+          <a href="#about" class="bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-50 transition">
             Learn More
           </a>
         </div>
@@ -60,24 +61,34 @@
     </div>
   </section>
 
+  <!-- Hero Images -->
+  <section class="py-8 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-4">
+        <img src="images/hero-1.jpg" alt="Villa view" class="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg">
+        <img src="images/hero-2.jpg" alt="Pool and ocean view" class="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg">
+      </div>
+    </div>
+  </section>
+
   <!-- About Section -->
-  <section id="about" class="py-16 bg-white">
-    <div class="container mx-auto px-6">
+  <section id="about" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h3 class="text-3xl md:text-4xl font-display font-bold text-blue-900 mb-8 text-center">
+        <h2 class="text-2xl md:text-4xl font-display font-bold text-blue-900 mb-6 text-center">
           GORGEOUS Unobstructed Panoramic Ocean Views
-        </h3>
+        </h2>
         
-        <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed">
-          <p class="mb-6">
+        <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-4">
+          <p>
             Entering through the gate, you will definitely be WOWed! Greeted with unobstructed panoramic ocean views to watercolor sunsets, private pool with custom tile work, lanai complete with farmhouse table and multiple seating areas, an inviting gazebo with dining option to enjoy tropical breezes blowing the wind chimes, and a private pool deck with surround sound throughout.
           </p>
           
-          <p class="mb-6">
+          <p>
             A traditional, solid Koa door complete with a brass welcome pineapple door knocker and windows on either side etched with beautiful butterflies will welcome you to your home away from home.
           </p>
           
-          <p class="mb-6">
+          <p>
             Experience the Big Island from the comfort of this charming Mediterranean-style Villa with GORGEOUS unobstructed panoramic ocean views and memorable sunsets from your own private pool, living room, lanai, gazebo, private pool deck, even while you're cooking!
           </p>
         </div>
@@ -85,110 +96,81 @@
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section id="features" class="py-16 bg-blue-50">
-    <div class="container mx-auto px-6">
-      <h3 class="text-3xl md:text-4xl font-display font-bold text-blue-900 mb-12 text-center">
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-4xl font-display font-bold text-blue-900 mb-8 text-center">
         Resort Living at the Villa
-      </h3>
+      </h2>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-xl shadow-md">
-          <div class="text-4xl mb-4">🏊</div>
-          <h4 class="text-xl font-bold text-blue-900 mb-3">Private Pool</h4>
-          <p class="text-gray-600">Custom tile work with panoramic ocean views and surround sound throughout the pool deck.</p>
-        </div>
-        
-        <div class="bg-white p-8 rounded-xl shadow-md">
-          <div class="text-4xl mb-4">🌅</div>
-          <h4 class="text-xl font-bold text-blue-900 mb-3">Sunset Views</h4>
-          <p class="text-gray-600">Watercolor sunsets from your private pool, living room, lanai, gazebo, and even while cooking!</p>
-        </div>
-        
-        <div class="bg-white p-8 rounded-xl shadow-md">
-          <div class="text-4xl mb-4">🌺</div>
-          <h4 class="text-xl font-bold text-blue-900 mb-3">Tropical Lanai</h4>
-          <p class="text-gray-600">Farmhouse table and multiple seating areas to enjoy tropical breezes and wind chimes.</p>
-        </div>
-        
-        <div class="bg-white p-8 rounded-xl shadow-md">
-          <div class="text-4xl mb-4">🍽️</div>
-          <h4 class="text-xl font-bold text-blue-900 mb-3">Gazebo Dining</h4>
-          <p class="text-gray-600">Inviting gazebo with dining options to enjoy meals with stunning views.</p>
-        </div>
-        
-        <div class="bg-white p-8 rounded-xl shadow-md">
-          <div class="text-4xl mb-4">🚪</div>
-          <h4 class="text-xl font-bold text-blue-900 mb-3">Koa Door Welcome</h4>
-          <p class="text-gray-600">Traditional solid Koa door with brass pineapple knocker and etched butterfly windows.</p>
-        </div>
-        
-        <div class="bg-white p-8 rounded-xl shadow-md">
-          <div class="text-4xl mb-4">🔊</div>
-          <h4 class="text-xl font-bold text-blue-900 mb-3">Surround Sound</h4>
-          <p class="text-gray-600">Premium audio system throughout the pool deck for the perfect ambiance.</p>
-        </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        <img src="images/pool.jpg" alt="Private Pool" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+        <img src="images/sunset.jpg" alt="Sunset View" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+        <img src="images/ocean-view.jpg" alt="Ocean View" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+        <img src="images/villa-1.jpg" alt="Villa Exterior" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+        <img src="images/bedroom.jpg" alt="Bedroom" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+        <img src="images/bathroom.jpg" alt="Bathroom" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition">
       </div>
     </div>
   </section>
 
   <!-- Location Section -->
-  <section id="location" class="py-16 bg-white">
-    <div class="container mx-auto px-6">
+  <section id="location" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <h3 class="text-3xl md:text-4xl font-display font-bold text-blue-900 mb-6">
+        <h2 class="text-2xl md:text-4xl font-display font-bold text-blue-900 mb-6">
           "The Heart between Kailua-Kona & The Kohala Coast"
-        </h3>
+        </h2>
         
-        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        <p class="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
           Where you can enjoy strolling along Kona's famous Ali'i Drive AND the Kahala Coast (home to one of Conde Nast Travelers top ten beaches on the globe). Hualalai Villa is located on a cul-de-sac in a residential neighborhood approximately 1 mi. from Kona International Airport.
         </p>
         
-        <div class="bg-blue-50 p-8 rounded-xl">
-          <div class="grid md:grid-cols-2 gap-6 text-center">
+        <div class="bg-blue-50 p-6 md:p-8 rounded-xl">
+          <div class="grid md:grid-cols-2 gap-6 text-center mb-4">
             <div>
-              <div class="text-3xl font-bold text-blue-900 mb-2">10 min</div>
-              <p class="text-gray-600">from Kailua-Kona Village</p>
+              <div class="text-2xl md:text-3xl font-bold text-blue-900 mb-1">10 min</div>
+              <p class="text-gray-600 text-sm md:text-base">from Kailua-Kona Village</p>
             </div>
             <div>
-              <div class="text-3xl font-bold text-blue-900 mb-2">10 min</div>
-              <p class="text-gray-600">from fabulous beaches</p>
+              <div class="text-2xl md:text-3xl font-bold text-blue-900 mb-1">10 min</div>
+              <p class="text-gray-600 text-sm md:text-base">from fabulous beaches</p>
             </div>
           </div>
-          <p class="text-xl font-display italic text-blue-900 mt-6">It's the best of both worlds!</p>
+          <p class="text-lg md:text-xl font-display italic text-blue-900">It's the best of both worlds!</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Perfect For Section -->
-  <section class="py-16 bg-blue-900 text-white">
-    <div class="container mx-auto px-6 text-center">
-      <h3 class="text-3xl md:text-4xl font-display font-bold mb-8">
+  <section class="py-12 bg-blue-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-4xl font-display font-bold mb-6">
         Perfect For
-      </h3>
+      </h2>
       
-      <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-        <span class="bg-white/10 px-6 py-3 rounded-full text-lg">Family Vacations</span>
-        <span class="bg-white/10 px-6 py-3 rounded-full text-lg">Honeymoons</span>
-        <span class="bg-white/10 px-6 py-3 rounded-full text-lg">Birthdays</span>
-        <span class="bg-white/10 px-6 py-3 rounded-full text-lg">Holidays</span>
-        <span class="bg-white/10 px-6 py-3 rounded-full text-lg">Getting Away From It All</span>
+      <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+        <span class="bg-white/20 px-4 md:px-6 py-2 rounded-full text-sm md:text-base">Family Vacations</span>
+        <span class="bg-white/20 px-4 md:px-6 py-2 rounded-full text-sm md:text-base">Honeymoons</span>
+        <span class="bg-white/20 px-4 md:px-6 py-2 rounded-full text-sm md:text-base">Birthdays</span>
+        <span class="bg-white/20 px-4 md:px-6 py-2 rounded-full text-sm md:text-base">Holidays</span>
+        <span class="bg-white/20 px-4 md:px-6 py-2 rounded-full text-sm md:text-base">Getting Away From It All</span>
       </div>
     </div>
   </section>
 
-  <!-- Contact/CTA Section -->
-  <section id="contact" class="py-16 bg-gradient-to-b from-blue-50 to-white">
-    <div class="container mx-auto px-6">
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
       <div class="max-w-2xl mx-auto text-center">
-        <h3 class="text-3xl md:text-4xl font-display font-bold text-blue-900 mb-6">
+        <h2 class="text-2xl md:text-4xl font-display font-bold text-blue-900 mb-4">
           Ready to Experience WOW?
-        </h3>
-        <p class="text-lg text-gray-600 mb-8">
+        </h2>
+        <p class="text-base md:text-lg text-gray-600 mb-6">
           The Villa is a private sanctuary with the amenities you need for a special Hawaiian vacation. Perched high above the crowd taking advantage of unobstructed views.
         </p>
-        <a href="mailto:info@180viewofwow.com" class="inline-block bg-blue-900 text-white px-10 py-4 rounded-lg text-xl font-semibold hover:bg-blue-800 transition shadow-lg">
+        <a href="mailto:info@180viewofwow.com" class="inline-block bg-blue-600 text-white px-8 md:px-10 py-3 md:py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition shadow-lg">
           Contact Us Today
         </a>
       </div>
@@ -196,16 +178,16 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center">
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
         <div class="mb-4 md:mb-0">
-          <h4 class="text-2xl font-display font-bold">180 View of WOW</h4>
-          <p class="text-gray-400 mt-2">Your Private Hawaiian Paradise</p>
+          <h4 class="text-xl md:text-2xl font-display font-bold">180 View of WOW</h4>
+          <p class="text-gray-400 mt-1 text-sm">Your Private Hawaiian Paradise</p>
         </div>
-        <div class="text-center md:text-right">
-          <p class="text-gray-400">Hualalai Villa, Kona, Hawaii</p>
-          <p class="text-gray-500 text-sm mt-2">© 2024 180 View of WOW. All rights reserved.</p>
+        <div>
+          <p class="text-gray-400 text-sm">Hualalai Villa, Kona, Hawaii</p>
+          <p class="text-gray-500 text-xs mt-1">© 2024 180 View of WOW. All rights reserved.</p>
         </div>
       </div>
     </div>
