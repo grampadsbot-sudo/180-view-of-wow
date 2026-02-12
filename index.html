@@ -208,15 +208,92 @@
       <img src="images/d9c9a071ebfb3d7d833f444ad49b2d4f.png" alt="180 View of WOW Logo" style="width: 204px; margin: 20px auto;">
       <img src="images/22932621cd12ec21136850057cecdb7e.jpeg" alt="Sunset Watercolors" style="width: 100%; max-width: 800px; margin: 20px auto; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
       <h1 class="headline-l" style="margin-top: 30px;">Your Own Private Mini-Resort</h1>
-      <p style="font-weight: 500; font-size: 1.73rem;">
-        Entering through the gate, you will definitely be WOWed!<br><br>
-        Greeted w/unobstructed panoramic ocean views to watercolor sunsets, private pool w/custom tile work, lanai complete w/farmhouse table and multiple seating areas, an inviting gazebo w/dining option to enjoy tropical breezes blowing the wind chimes, and a private pool deck w/surround sound throughout.<br><br>
-        A traditional, solid Koa door complete with a brass welcome pineapple door knocker and windows on either side etched w/beautiful butterflies will welcome you to your home way from home.<br><br>
-        Experience the Big Island from the comfort of this charming Mediterranean-style Villa w/GORGEOUS unobstructed panoramic ocean views and memorable sunsets from your own private pool, living room, lanai, gazebo, private pool deck, even while you're cooking!!<br><br>
-        Resort living at the Villa is perfect for fantastic entertaining or relaxing. The Villa has been enjoyed for family vacations, honeymoons, birthdays, and holidays or simply just getting away from it all. Perched high above the crowd taking advantage of unobstructed views the Villa is a private sanctuary w/the amenities you need for a special Hawaiian vacation.<br><br>
-        "The Heart between Kailua-Kona & The Kohala Coast" where you can enjoy strolling along Kona's famous Ali'i Drive AND the Kahala Coast (home to one of Conde Nast Travelers top ten beaches on the globe). Hualalai Villa is located on a cul-de-sac in a residential neighborhood approximately 1 mi. From Kona International Airport<br><br>
-        The Villa is approximately 10 minutes from Kailua-Kona Village and 10 minutes from one of many fabulous beaches. It's the best of both worlds!
-      </p>
+      
+      <div class="expandable-text">
+        <div class="text-preview" id="textPreview">
+          <p style="font-weight: 500; font-size: 1.73rem; margin-bottom: 0;">
+            Entering through the gate, you will definitely be WOWed!<br><br>
+            Greeted w/unobstructed panoramic ocean views to watercolor sunsets, private pool w/custom tile work, lanai complete w/farmhouse table and multiple seating areas, an inviting gazebo w/dining option to enjoy tropical breezes blowing the wind chimes, and a private pool deck w/surround sound throughout.<br><br>
+            A traditional, solid Koa door complete with a brass welcome pineapple door knocker and windows on either side etched w/beautiful butterflies will welcome you to your home way from home.
+          </p>
+        </div>
+        <div class="text-full" id="textFull" style="display: none;">
+          <p style="font-weight: 500; font-size: 1.73rem; margin-bottom: 0;">
+            Entering through the gate, you will definitely be WOWed!<br><br>
+            Greeted w/unobstructed panoramic ocean views to watercolor sunsets, private pool w/custom tile work, lanai complete w/farmhouse table and multiple seating areas, an inviting gazebo w/dining option to enjoy tropical breezes blowing the wind chimes, and a private pool deck w/surround sound throughout.<br><br>
+            A traditional, solid Koa door complete with a brass welcome pineapple door knocker and windows on either side etched w/beautiful butterflies will welcome you to your home way from home.<br><br>
+            Experience the Big Island from the comfort of this charming Mediterranean-style Villa w/GORGEOUS unobstructed panoramic ocean views and memorable sunsets from your own private pool, living room, lanai, gazebo, private pool deck, even while you're cooking!!<br><br>
+            Resort living at the Villa is perfect for fantastic entertaining or relaxing. The Villa has been enjoyed for family vacations, honeymoons, birthdays, and holidays or simply just getting away from it all. Perched high above the crowd taking advantage of unobstructed views the Villa is a private sanctuary w/the amenities you need for a special Hawaiian vacation.<br><br>
+            "The Heart between Kailua-Kona & The Kohala Coast" where you can enjoy strolling along Kona's famous Ali'i Drive AND the Kahala Coast (home to one of Conde Nast Travelers top ten beaches on the globe). Hualalai Villa is located on a cul-de-sac in a residential neighborhood approximately 1 mi. From Kona International Airport<br><br>
+            The Villa is approximately 10 minutes from Kailua-Kona Village and 10 minutes from one of many fabulous beaches. It's the best of both worlds!
+          </p>
+        </div>
+        <button class="read-more-btn" id="readMoreBtn" onclick="toggleText()">
+          <span>▼ Read More</span>
+        </button>
+      </div>
+      
+      <style>
+        .expandable-text { position: relative; }
+        .text-preview { 
+          position: relative;
+          max-height: 320px;
+          overflow: hidden;
+        }
+        .text-preview::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 80px;
+          background: linear-gradient(to bottom, transparent, #dde7ff);
+          pointer-events: none;
+        }
+        .read-more-btn {
+          display: inline-block;
+          margin-top: 20px;
+          padding: 12px 30px;
+          background: linear-gradient(135deg, #8B6914 0%, #9A7B1A 100%);
+          color: #fff;
+          border: none;
+          border-radius: 30px;
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: 1.2rem;
+          letter-spacing: 0.1em;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(139, 105, 20, 0.4);
+        }
+        .read-more-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(139, 105, 20, 0.5);
+          background: linear-gradient(135deg, #9A7B1A 0%, #8B6914 100%);
+        }
+        .read-more-btn.expanded {
+          background: linear-gradient(135deg, #666 0%, #888 100%);
+        }
+      </style>
+      
+      <script>
+        function toggleText() {
+          const preview = document.getElementById('textPreview');
+          const full = document.getElementById('textFull');
+          const btn = document.getElementById('readMoreBtn');
+          
+          if (full.style.display === 'none') {
+            preview.style.display = 'none';
+            full.style.display = 'block';
+            btn.innerHTML = '<span>▲ Show Less</span>';
+            btn.classList.add('expanded');
+          } else {
+            preview.style.display = 'block';
+            full.style.display = 'none';
+            btn.innerHTML = '<span>▼ Read More</span>';
+            btn.classList.remove('expanded');
+          }
+        }
+      </script>
     </div>
   </section>
 
