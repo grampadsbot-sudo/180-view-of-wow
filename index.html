@@ -125,7 +125,9 @@
       .mobile-nav { display: none; }
       .header .nav { display: none; }
       .mobile-header .nav { display: flex !important; gap: 0.5em; }
-      .mobile-header .nav a { font-size: 0.7rem; padding: 4px 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 36px; line-height: 1; }
+      .mobile-header .nav a { font-size: 0.65rem; padding: 3px 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 38px; text-align: center; line-height: 1.2; }
+      .mobile-header .nav a .nav-icon { font-size: 0.9rem; display: block; }
+      .mobile-header .nav a .nav-text { display: block; margin-top: 2px; }
       body { padding-top: 50px; }
       .testimonial-section { padding: 15px 0 0 0 !important; }
       .testimonial-section-mobile { padding: 30px 0 0 0 !important; }
@@ -150,8 +152,6 @@
       p { font-size: 1rem; line-height: 1.4; }
       .narrow-container { max-width: 100%; }
       body { padding-top: 50px; }
-      /* Reviews section image optimization mobile */
-      #REVIEWS img { max-width: 100%; height: auto; }
     }
     @media (min-width: 771px) { .mobile-only { display: none !important; } }
   </style>
@@ -179,9 +179,9 @@
         <img src="images/7bce27064a730280337e71c227111c9c.png" alt="180 View of WOW Inc.">
       </div>
       <nav class="nav">
-        <a href="#ROOMS">💤 Rooms</a>
-        <a href="#REVIEWS">✏️ Reviews</a>
-        <a href="#SUNSETS">🌅 Sunsets</a>
+        <a href="#ROOMS"><span class="nav-icon">💤</span><span class="nav-text">Rooms</span></a>
+        <a href="#REVIEWS"><span class="nav-icon">✏️</span><span class="nav-text">Reviews</span></a>
+        <a href="#SUNSETS"><span class="nav-icon">🌅</span><span class="nav-text">Sunsets</span></a>
       </nav>
     </div>
   </header>
@@ -248,7 +248,7 @@
         <em style="font-style: italic;">"Oh you're probably only going to get about 350 a year"</em><br><br>
         And though we haven't counted, we think he's right.
       </p>
-      <div class="video-container" style="width: 100%; margin: 30px 0 20px 0; display: flex; justify-content: center; background: #dde7ff;">
+      <div class="video-container" style="width: 100%; margin: 30px 0 40px 0; display: flex; justify-content: center; background: #dde7ff;">
         <iframe 
           src="https://embed.voomly.com/embed/assets/embed.html?videoId=vgA_aNJGQ9uS0lUOjkgXucOFhQ-JFgDpx4aMQ4wCU6bEOPTxB&videoRatio=0.5625&type=v&skinColor=%23008EFF" 
           style="width: 100%; max-width: 1000px; aspect-ratio: 9/16; border: none; border-radius: 10px;"
@@ -496,12 +496,7 @@
       <h1 class="headline-xl">✏️ Reviews</h1>
       <div class="divider" style="border-color: #fff;"></div>
       <h1 class="headline-l" style="margin-top: 30px;">Mark, debbie &amp; family</h1>
-      <img 
-        src="images/e995c5f14d1de6cece3673e53e01ac01.jpg" 
-        srcset="images/e995c5f14d1de6cece3673e53e01ac01-mobile.jpg 500w,
-                images/e995c5f14d1de6cece3673e53e01ac01.jpg 800w"
-        sizes="(max-width: 770px) 100vw, 71%"
-        alt="Mark, Debbie and family - Thank you note">
+      <img src="images/e995c5f14d1de6cece3673e53e01ac01.jpg" alt="Mark, Debbie and family">
     </div>
   </section>
 
