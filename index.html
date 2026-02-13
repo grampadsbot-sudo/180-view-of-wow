@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>180 View of WOW Home Page</title>
+  <link rel="icon" type="image/png" href="images/d9c9a071ebfb3d7d833f444ad49b2d4f.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 300; line-height: 1.6; color: #333; }
+    img { max-width: 100%; height: auto; display: block; }
+    
+    /* Header - Sticky Dark Gold */
+    .header { 
+      background: linear-gradient(135deg, #8B6914 0%, #9A7B1A 50%, #705C10 100%); 
+      padding: 6px 0; 
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+      border-bottom: 3px solid #5C4A0D;
+    }
+    .header-container { 
+      max-width: 1170px; 
+      margin: 0 auto; 
+      padding: 0 15px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      height: 50px;
+    }
+    .logo { 
+      width: auto; 
+      height: 40px; 
+      display: flex;
+      align-items: center;
+    }
+    .logo img { 
+      height: 40px; 
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+    }
+    .nav { display: flex; gap: 2em; align-items: center; }
+    .nav a { 
+      font-size: 0.9rem; 
+      font-weight: 600; 
+      color: #1a1a1a; 
+      text-decoration: none; 
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .nav a:hover { 
+      background: rgba(255,255,255,0.9);
+      color: #5C4A0D;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    /* Adjust body to account for sticky header */
+    body { padding-top: 50px; }
+    
+    .mobile-header { display: none; background: linear-gradient(135deg, #8B6914 0%, #9A7B1A 50%, #705C10 100%); padding: 6px 0; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; border-bottom: 3px solid #5C4A0D; }
+    .mobile-header .logo { width: auto; height: 40px; margin: 0 auto; }
+    body .mobile-header + nav + section { padding-top: 50px; }
+    .mobile-nav { display: none; background: linear-gradient(135deg, #C9A961 0%, #D4AF37 100%); padding: 6px 0; position: fixed; top: 52px; left: 0; right: 0; z-index: 999; border-bottom: 2px solid #8B6914; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .mobile-nav .nav { justify-content: center; flex-wrap: wrap; }
+    .mobile-nav .nav a { font-size: 0.8rem; padding: 5px 10px; margin: 2px; background: rgba(255,255,255,0.25); }
+    
+    .section { padding: 3% 1%; }
+    .container { max-width: 1170px; margin: 0 auto; padding: 0 15px; }
+    .section-dark { background: #1a1a1a; color: #fff; }
+    .section-dark h1, .section-dark h2 { color: #fff; }
+    .section-lightest { background: #dde7ff; color: #000b26; }
+    
+    .testimonial-section { padding: 0; background: #1a1a1a; }
+    .testimonial-row { display: flex; align-items: center; gap: 30px; }
+    .testimonial-content { flex: 1; padding: 10px 20px; }
+    .testimonial-image { flex: 1; text-align: center; }
+    .testimonial-image img { width: 71%; border: 7px solid #fff; margin: 0 auto; }
+    .volume-icon { font-size: 24px; color: #fff; margin-bottom: 25px; }
+    
+    h1 { font-family: 'Bebas Neue', Impact, sans-serif; font-weight: 400; line-height: 0.9; letter-spacing: 0.15rem; margin-bottom: 20px; }
+    h2 { font-family: 'La Belle Aurore', cursive; font-weight: 400; letter-spacing: 0; line-height: 0.8; margin-bottom: 15px; }
+    .headline-xl { font-size: 4rem; }
+    .headline-l { font-size: 3rem; }
+    .headline-m { font-size: 2rem; }
+    .subheadline-m { font-size: 1.5rem; }
+    p { font-size: 1.25rem; line-height: 1.4; margin-bottom: 20px; }
+    .text-center { text-align: center; }
+    
+    .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 30px 0; }
+    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    
+    .image-section { padding: 3% 0 4%; }
+    .image-section img { width: 100%; max-width: 1000px; margin: 0 auto; }
+    .narrow-container { max-width: 80%; margin: 0 auto; }
+    
+    .image-row { display: flex; gap: 15px; margin-top: 20px; }
+    .image-row .image-col { flex: 1; }
+    .image-row img { width: 100%; height: auto; }
+    
+    .divider { border-top: 4px solid #000; margin: 20px 0; }
+    
+    .footer { background: #1a1a1a; padding: 3% 1%; }
+    .footer-content { display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { width: 250px; }
+    .footer-text { font-family: 'Roboto', sans-serif; font-size: 14px; color: #fff; letter-spacing: 0.15rem; line-height: 1; }
+    
+    @media (max-width: 770px) {
+      .desktop-only { display: none !important; }
+      .mobile-header { display: block !important; }
+      .mobile-nav { display: none; }
+      .header .nav { display: none; }
+      .mobile-header .nav { display: flex !important; gap: 0.5em; }
+      .mobile-header .nav a { font-size: 0.7rem; padding: 4px 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 36px; line-height: 1; }
+      body { padding-top: 50px; }
+      .testimonial-section { padding: 15px 0 0 0 !important; }
+      .testimonial-section-mobile { padding: 30px 0 0 0 !important; }
+      .testimonial-content-mobile { padding: 0 15px !important; }
+      .testimonial-content-mobile h1 { margin: -10px 0 0 0 !important; padding: 0 !important; }
+      .testimonial-image-mobile { margin: -20px 0 0 0 !important; padding: 0 15px !important; }
+      .testimonial-image-mobile img { margin: 0 !important; padding: 0 !important; display: block !important; }
+      .testimonial-row { flex-direction: column; }
+      .testimonial-image img { width: 100%; }
+      .image-row { flex-direction: column; }
+      .footer-content { flex-direction: column; text-align: center; gap: 20px; }
+      .headline-xl { font-size: 1.95rem; }
+      .headline-l { font-size: 1.5rem; }
+      /* Mobile welcome section adjustments */
+      .section-lightest svg { width: 40px !important; height: 55px !important; }
+      .welcome-text { font-size: 2.2rem !important; }
+      .welcome-subtitle { font-size: 1rem !important; }
+      .headline-m { font-size: 1.25rem; line-height: 1.4; }
+      h1 { letter-spacing: 0; line-height: 1.4; }
+      h2 { letter-spacing: 0; line-height: 1.4; }
+      .subheadline-m { font-size: 1rem; }
+      p { font-size: 1rem; line-height: 1.4; }
+      .narrow-container { max-width: 100%; }
+      body { padding-top: 50px; }
+      /* Reviews section image optimization mobile */
+      #REVIEWS img { max-width: 100%; height: auto; }
+    }
+    @media (min-width: 771px) { .mobile-only { display: none !important; } }
+  </style>
+</head>
+<body>
+
+  <!-- Desktop Header -->
+  <header class="header desktop-only">
+    <div class="header-container">
+      <div class="logo">
+        <img src="images/7bce27064a730280337e71c227111c9c.png" alt="180 View of WOW">
+      </div>
+      <nav class="nav">
+        <a href="#ROOMS">💤 Rooms</a>
+        <a href="#REVIEWS">✏️ Reviews</a>
+        <a href="#SUNSETS">🌅 Sunsets</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Header -->
+  <header class="mobile-header mobile-only">
+    <div class="header-container">
+      <div class="logo">
+        <img src="images/7bce27064a730280337e71c227111c9c.png" alt="180 View of WOW Inc.">
+      </div>
+      <nav class="nav">
+        <a href="#ROOMS">💤 Rooms</a>
+        <a href="#REVIEWS">✏️ Reviews</a>
+        <a href="#SUNSETS">🌅 Sunsets</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Testimonial Section -->
+  <section class="testimonial-section testimonial-section-mobile section-dark">
+    <div class="container">
+      <div class="testimonial-row">
+        <div class="testimonial-content testimonial-content-mobile">
+          <h1 class="headline-m" style="text-align: center; margin: 0;">"After 18 months of stress, this Villa and this Island soothed our souls."</h1>
+        </div>
+        <div class="testimonial-image testimonial-image-mobile">
+          <img src="images/08e6c14232866dd0fdd3dd0b6cb2a2d6.jpeg" alt="Mark and Debbie">
+          <h2 class="subheadline-m" style="margin-top: 10px; color: #fff;">Mark, Debbie and Kate</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="section section-lightest" style="padding: 0;">
+    <div class="container text-center" style="padding: 0 15px;">
+      <!-- Modern Hawaiian Welcome Header -->
+      <div style="position: relative; padding: 20px 0 0 0; margin: 0;">
+        <!-- Decorative top bar with gradient -->
+        <div style="height: 3px; background: linear-gradient(90deg, transparent 0%, #C9A961 20%, #D4AF37 50%, #C9A961 80%, transparent 100%); margin-bottom: 25px;"></div>
+        
+        <!-- Palm trees and welcome text -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+          <!-- Left palm SVG -->
+          <svg width="60" height="80" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));">
+            <path d="M30 80V35" stroke="#2D5016" stroke-width="4" stroke-linecap="round"/>
+            <path d="M30 35C30 35 5 25 5 10C5 10 20 15 30 35" fill="#4A7C2E" stroke="#3D6B25" stroke-width="1"/>
+            <path d="M30 35C30 35 55 25 55 10C55 10 40 15 30 35" fill="#4A7C2E" stroke="#3D6B25" stroke-width="1"/>
+            <path d="M30 35C30 35 10 20 10 5C10 5 25 15 30 35" fill="#5A8C3E" stroke="#4A7C2E" stroke-width="1"/>
+            <path d="M30 35C30 35 50 20 50 5C50 5 35 15 30 35" fill="#5A8C3E" stroke="#4A7C2E" stroke-width="1"/>
+            <path d="M30 35C30 35 15 28 8 35C8 35 20 32 30 35" fill="#6A9C4E" stroke="#5A8C3E" stroke-width="1"/>
+            <path d="M30 35C30 35 45 28 52 35C52 35 40 32 30 35" fill="#6A9C4E" stroke="#5A8C3E" stroke-width="1"/>
+          </svg>
+          
+          <!-- WELCOME text with Hawaiian styling -->
+          <div style="text-align: center;">
+            <div class="welcome-text" style="font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; font-weight: 400; letter-spacing: 0.2em; color: #8B6914; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); line-height: 1;">WELCOME</div>
+            <div class="welcome-subtitle" style="font-family: 'La Belle Aurore', cursive; font-size: 1.3rem; color: #705C10; margin-top: 5px; letter-spacing: 0.15em;">E Komo Mai</div>
+          </div>
+          
+          <!-- Right palm SVG -->
+          <svg width="60" height="80" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));">
+            <path d="M30 80V35" stroke="#2D5016" stroke-width="4" stroke-linecap="round"/>
+            <path d="M30 35C30 35 5 25 5 10C5 10 20 15 30 35" fill="#4A7C2E" stroke="#3D6B25" stroke-width="1"/>
+            <path d="M30 35C30 35 55 25 55 10C55 10 40 15 30 35" fill="#4A7C2E" stroke="#3D6B25" stroke-width="1"/>
+            <path d="M30 35C30 35 10 20 10 5C10 5 25 15 30 35" fill="#5A8C3E" stroke="#4A7C2E" stroke-width="1"/>
+            <path d="M30 35C30 35 50 20 50 5C50 5 35 15 30 35" fill="#5A8C3E" stroke="#4A7C2E" stroke-width="1"/>
+            <path d="M30 35C30 35 15 28 8 35C8 35 20 32 30 35" fill="#6A9C4E" stroke="#5A8C3E" stroke-width="1"/>
+            <path d="M30 35C30 35 45 28 52 35C52 35 40 32 30 35" fill="#6A9C4E" stroke="#5A8C3E" stroke-width="1"/>
+          </svg>
+        </div>
+        
+        <!-- Decorative bottom bar with gradient -->
+        <div style="height: 3px; background: linear-gradient(90deg, transparent 0%, #C9A961 20%, #D4AF37 50%, #C9A961 80%, transparent 100%); margin-top: 25px;"></div>
+        
+      </div>
+      <p style="font-size: 1.25rem; font-weight: 400; line-height: 1.5; margin: 10px 0 0 0;">
+        When we bought the Villa, we asked the original owner how many sunsets he thought we would get in a year?<br><br>
+        <em style="font-style: italic;">"Oh you're probably only going to get about 350 a year"</em><br><br>
+        And though we haven't counted, we think he's right.
+      </p>
+      <div class="video-container" style="width: 100%; margin: 30px 0 20px 0; display: flex; justify-content: center; background: #dde7ff;">
+        <iframe 
+          src="https://embed.voomly.com/embed/assets/embed.html?videoId=vgA_aNJGQ9uS0lUOjkgXucOFhQ-JFgDpx4aMQ4wCU6bEOPTxB&videoRatio=0.5625&type=v&skinColor=%23008EFF" 
+          style="width: 100%; max-width: 1000px; aspect-ratio: 9/16; border: none; border-radius: 10px;"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 180 View of WOW Section -->
+  <section class="section section-lightest" style="padding-top: 0;">
+    <div class="container text-center">
+      <img src="images/d9c9a071ebfb3d7d833f444ad49b2d4f.png" alt="180 View of WOW Logo" style="width: 204px; margin: 0 auto 20px auto;">
+      <img src="images/22932621cd12ec21136850057cecdb7e.jpeg" alt="Sunset Watercolors" style="width: 100%; max-width: 800px; margin: 20px auto; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+      <h1 class="headline-l" style="margin-top: 30px;">Your Own Private Mini-Resort</h1>
+      
+      <div class="expandable-text">
+        <div class="text-preview" id="textPreview">
+          <p style="font-weight: 500; font-size: 1.5rem; margin-bottom: 0;">
+            Entering through the gate, you will definitely be WOWed!<br><br>
+            Greeted w/unobstructed panoramic ocean views to watercolor sunsets, private pool w/custom tile work, lanai complete w/farmhouse table and multiple seating areas, an inviting gazebo w/dining option to enjoy tropical breezes blowing the wind chimes, and a private pool deck w/surround sound throughout.<br><br>
+            A traditional, solid Koa door complete with a brass welcome pineapple door knocker and windows on either side etched w/beautiful butterflies will welcome you to your home way from home.
+          </p>
+        </div>
+        <div class="text-full" id="textFull" style="display: none;">
+          <p style="font-weight: 500; font-size: 1.5rem; margin-bottom: 0;">
+            Entering through the gate, you will definitely be WOWed!<br><br>
+            Greeted w/unobstructed panoramic ocean views to watercolor sunsets, private pool w/custom tile work, lanai complete w/farmhouse table and multiple seating areas, an inviting gazebo w/dining option to enjoy tropical breezes blowing the wind chimes, and a private pool deck w/surround sound throughout.<br><br>
+            A traditional, solid Koa door complete with a brass welcome pineapple door knocker and windows on either side etched w/beautiful butterflies will welcome you to your home way from home.<br><br>
+            Experience the Big Island from the comfort of this charming Mediterranean-style Villa w/GORGEOUS unobstructed panoramic ocean views and memorable sunsets from your own private pool, living room, lanai, gazebo, private pool deck, even while you're cooking!!<br><br>
+            Resort living at the Villa is perfect for fantastic entertaining or relaxing. The Villa has been enjoyed for family vacations, honeymoons, birthdays, and holidays or simply just getting away from it all. Perched high above the crowd taking advantage of unobstructed views the Villa is a private sanctuary w/the amenities you need for a special Hawaiian vacation.<br><br>
+            "The Heart between Kailua-Kona & The Kohala Coast" where you can enjoy strolling along Kona's famous Ali'i Drive AND the Kahala Coast (home to one of Conde Nast Travelers top ten beaches on the globe). Hualalai Villa is located on a cul-de-sac in a residential neighborhood approximately 1 mi. From Kona International Airport<br><br>
+            The Villa is approximately 10 minutes from Kailua-Kona Village and 10 minutes from one of many fabulous beaches. It's the best of both worlds!
+          </p>
+        </div>
+        <button class="read-more-btn" id="readMoreBtn" onclick="toggleText()">
+          <span>▼ Read More</span>
+        </button>
+      </div>
+      
+      <style>
+        .expandable-text { position: relative; }
+        .text-preview { 
+          position: relative;
+          max-height: 320px;
+          overflow: hidden;
+        }
+        .text-preview::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 80px;
+          background: linear-gradient(to bottom, transparent, #dde7ff);
+          pointer-events: none;
+        }
+        .read-more-btn {
+          display: inline-block;
+          margin-top: 20px;
+          padding: 12px 30px;
+          background: linear-gradient(135deg, #8B6914 0%, #9A7B1A 100%);
+          color: #fff;
+          border: none;
+          border-radius: 30px;
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: 1.2rem;
+          letter-spacing: 0.1em;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(139, 105, 20, 0.4);
+        }
+        .read-more-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(139, 105, 20, 0.5);
+          background: linear-gradient(135deg, #9A7B1A 0%, #8B6914 100%);
+        }
+        .read-more-btn.expanded {
+          background: linear-gradient(135deg, #666 0%, #888 100%);
+        }
+      </style>
+      
+      <script>
+        function toggleText() {
+          const preview = document.getElementById('textPreview');
+          const full = document.getElementById('textFull');
+          const btn = document.getElementById('readMoreBtn');
+          
+          if (full.style.display === 'none') {
+            preview.style.display = 'none';
+            full.style.display = 'block';
+            btn.innerHTML = '<span>▲ Show Less</span>';
+            btn.classList.add('expanded');
+          } else {
+            preview.style.display = 'block';
+            full.style.display = 'none';
+            btn.innerHTML = '<span>▼ Read More</span>';
+            btn.classList.remove('expanded');
+          }
+        }
+      </script>
+    </div>
+  </section>
+
+  <!-- Sunset Gallery -->
+  <section id="SUNSETS" class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Sunset #1 Watercolors</h1>
+      <img src="images/22932621cd12ec21136850057cecdb7e.jpeg" alt="Sunset #1 Watercolors">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Sunset #2 Poolside</h1>
+      <img src="images/21971a07b659d622d606b26d8fafee91.jpeg" alt="Sunset #2 Poolside">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Sunset #3<br>Honus 🐢🐢 &amp; Swan 🦢</h1>
+      <img src="images/9ca5a9cc659da9c3b66acf2e2161ccbf.jpeg" alt="Sunset #3 Honus and Swan">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Sunset #4 afterglow</h1>
+      <img src="images/ac38960b24888aa4df05db8099ecab1e.jpeg" alt="Sunset #4 afterglow">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Sunset #5 Between Tikis</h1>
+      <div class="image-row">
+        <div class="image-col"><img src="images/ff54a3c3876b137fd06fdd607d1af94f.jpg" alt="Sunset #5a"></div>
+        <div class="image-col"><img src="images/373841831795ed19f085ffa8ab71b87e.jpg" alt="Sunset #5b"></div>
+        <div class="image-col"><img src="images/8af0c0bf074c178abaed2be5bdb3af81.jpg" alt="Sunset #5c"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Sunset #6 pooldeck dining</h1>
+      <img src="images/f6b305e469bb4c45852051d4ccab6100.jpg" alt="Sunset #6 pooldeck dining">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Sunset #7 Between the Palms from Living Room</h1>
+      <div class="image-row">
+        <div class="image-col"><img src="images/88b924da4375f7cdfdeb0d09ecf39a9e.jpg" alt="Sunset #7a"></div>
+        <div class="image-col"><img src="images/422bda79db7985c83fc2a7f1be60855c.jpg" alt="Sunset #7b"></div>
+        <div class="image-col"><img src="images/6bd0490fc6abf1de74ea88bb831f8cee.jpg" alt="Sunset #7c"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Welcome to Hualalai Villa</h1>
+      <img src="images/0e28bbf184c949ab35137e6e99513aa3.jpeg" alt="Welcome to Hualalai Villa">
+    </div>
+  </section>
+
+  <!-- Rooms Section -->
+  <section id="ROOMS" class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Living Room Area</h1>
+      <img src="images/d462d3790f5ee6fb012462e836370699.jpeg" alt="Living Room Area">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Kitchen with Views</h1>
+      <img src="images/393601f2a2d75e3efd5d16d2a242728e.jpeg" alt="Kitchen with Views">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Dining Room</h1>
+      <img src="images/deb59e4f2aad4da874c0505255e68a7a.jpeg" alt="Dining Room">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Master King Bedroom</h1>
+      <img src="images/73456562dabd5d0e8af1b7e3de5f058c.jpeg" alt="Master King Bedroom">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">King Hula Girl Bedroom</h1>
+      <img src="images/476c090fa79aed084d4d565ca7a200fb.jpeg" alt="King Hula Girl Bedroom">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Twin Honu 🐢 Bedroom</h1>
+      <img src="images/485fffc715dc50e93a54bae7f91fcafa.jpeg" alt="Twin Honu Bedroom">
+    </div>
+  </section>
+
+  <!-- Views Section -->
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">180 Ocean View beyond Pool from Lanai</h1>
+      <img src="images/c2fa836f8bd69dfbae0f16eb6c36dbba.jpeg" alt="180 Ocean View">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Evening Aloha</h1>
+      <img src="images/0015223e5e96f5b85f6d51e656581bb8.jpg" alt="Evening Aloha">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Breakfast Nook</h1>
+      <img src="images/9d064774e1cd8f3b74cd8808debee57a.jpeg" alt="Breakfast Nook">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Villa Entrance<br>via Private Driveway</h1>
+      <img src="images/10d39e5ba63e8a97cd81c171871168df.jpeg" alt="Villa Entrance">
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="REVIEWS" class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">✏️ Reviews</h1>
+      <div class="divider" style="border-color: #fff;"></div>
+      <h1 class="headline-l" style="margin-top: 30px;">Mark, debbie &amp; family</h1>
+      <img 
+        src="images/e995c5f14d1de6cece3673e53e01ac01.jpg" 
+        srcset="images/e995c5f14d1de6cece3673e53e01ac01-mobile.jpg 500w,
+                images/e995c5f14d1de6cece3673e53e01ac01.jpg 800w"
+        sizes="(max-width: 770px) 100vw, 71%"
+        alt="Mark, Debbie and family - Thank you note">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">The Gunderson Family</h1>
+      <img src="images/8e5972ab8a268675c54ac6ea85557508.png" alt="The Gunderson Family review">
+    </div>
+  </section>
+
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Jewel, Christian &amp; William</h1>
+      <img src="images/badfd5ad1c463d43c7c56dd132bec1c7.png" alt="Jewel, Christian and William review">
+    </div>
+  </section>
+
+  <!-- Memory Book Section -->
+  <section class="image-section section-dark">
+    <div class="container narrow-container text-center">
+      <h1 class="headline-xl">Filling up<br>another Memory Book!</h1>
+      <h2 style="color: #fff; margin: 20px 0;">Your dream vacation awaits 😎🍍</h2>
+      <div class="image-row">
+        <div class="image-col"><img src="images/c08e3675013c38124fc050e53dcf020b.png" alt="Memory Book Journal"></div>
+        <div class="image-col"><img src="images/4e755f14f65707eddf890d9f5a6a04e8.jpeg" alt="Memory Book Cover"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/d9c9a071ebfb3d7d833f444ad49b2d4f.png" alt="180 View of WOW">
+        </div>
+        <div class="footer-text">
+          <p style="margin: 0;">IBE Inc.</p>
+          <p style="margin: 0;">Copyright 2023</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
